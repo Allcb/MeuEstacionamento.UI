@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
 import { EstacionamentoStatusVaga } from '@shared/interfaces/estacionamento-status-vaga.interface';
 import { Estacionamento } from '@shared/interfaces/estacionamento.interface';
 import { EstacionamentoService } from '@shared/services/estacionamento.service';
@@ -8,10 +8,11 @@ import { EstacionamentoService } from '@shared/services/estacionamento.service';
   templateUrl: './indicador-estacionamento.component.html',
   styleUrl: './indicador-estacionamento.component.scss'
 })
-export class IndicadorEstacionamentoComponent implements OnInit {
+export class IndicadorEstacionamentoComponent implements OnInit, OnChanges {
+  @Input() estacionamentoId: string;
+
   private estacionamentoService = inject(EstacionamentoService);
 
-  public estacionamentoId: string = 'A22D9E00-C329-4EF0-AD9E-57EDBF500D02';
   public vagasRestantes: number;
   public vagasTotais: number;
   public estacionamentoCheio: boolean;
@@ -24,6 +25,18 @@ export class IndicadorEstacionamentoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.obterMetricas();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    debugger
+    if (changes['estacionamentoId']) {
+      this.estacionamentoId = changes['estacionamentoId'].currentValue;
+      this.obterMetricas();
+    }
+  }
+
+  public obterMetricas(): void {
     this.verificarEstacionamento();
     this.obterTotalVagasOcupadasVan();
     this.obterTotalVagasLivres();
@@ -64,6 +77,4 @@ export class IndicadorEstacionamentoComponent implements OnInit {
       this.statusVagasEstacionamento = statusVagasEstacionamento;
     });
   }
-
-
 }

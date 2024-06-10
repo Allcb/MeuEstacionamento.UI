@@ -70,7 +70,7 @@
 
       <div class="divider" role="separator" aria-label="Divider"></div>
       <div>
-        <app-indicador-estacionamento></app-indicador-estacionamento>
+        <app-indicador-estacionamento [estacionamentoId]="estacionamentoSelecionado?.id || ''"></app-indicador-estacionamento>
         <div class="social-links">
           <a
             href="https://github.com/Allcb"

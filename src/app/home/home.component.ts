@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   public obterEstacionamentos(): void {
     this.estacionamentoService.obterTodos().subscribe((estacionamento) => {
-      this.estacionamentos = estacionamento
+      this.estacionamentos = estacionamento;
 
       if (this.estacionamentos.length > 0) {
         this.estacionamentoSelecionado = this.estacionamentos[0];
@@ -59,8 +59,7 @@ export class HomeComponent implements OnInit {
 
   public cadastrar(): void {
     if (this.ticketFormulario.valid) {
-
-      this.ticket = { ...this.ticketFormulario.value, };
+      this.ticket = { ...this.ticketFormulario.value };
       this.ticket.estacionamentoId = this.estacionamentoSelecionado?.id;
 
       load.show();
@@ -80,7 +79,7 @@ export class HomeComponent implements OnInit {
           },
         });
 
-      this.exibirFormulario()
+      this.exibirFormulario();
     }
   }
 }
