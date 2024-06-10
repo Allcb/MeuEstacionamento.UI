@@ -1,0 +1,47 @@
+@import "../../../../assets/scss/constants";
+
+.container-indicador {
+  width: 100%;
+}
+
+.grid-padrao {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icone-circulo {
+  width: 50px;
+  height: 50px;
+  background-color: $primary;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.valor {
+  font-size: 20px;
+}
+
+mat-card-header {
+  padding: 18px 16px 0;
+  justify-content: center;
+}

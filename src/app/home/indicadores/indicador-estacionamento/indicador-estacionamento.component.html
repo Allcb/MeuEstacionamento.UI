@@ -1,0 +1,76 @@
+<div class="container-indicador">
+  <mat-card-header>
+    <mat-card-title>Metricas</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="grid-padrao">
+    <div class="indicador">
+      <mat-icon class="icone-circulo">place</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas Restantes</div>
+        <div class="valor">{{ vagasRestantes }}</div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">format_list_numbered</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas Totais</div>
+        <div class="valor">{{ vagasTotais }}</div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">highlight_off</mat-icon>
+      <div class="detalhes">
+        <div class="label">Estacionamento Cheio</div>
+        <div class="valor">{{ !estacionamentoCheio ? "Não" : "Sim" }}</div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">check_circle</mat-icon>
+      <div class="detalhes">
+        <div class="label">Estacionamento Vazio</div>
+        <div class="valor">{{ !estacionamentoVazio ? "Não" : "Sim" }}</div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">motorcycle</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas de Moto Cheias</div>
+        <div class="valor">
+          {{ !statusVagasEstacionamento.vagaPequenaDisponivel ? "Não" : "Sim" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">directions_car</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas de Carro Cheias</div>
+        <div class="valor">
+          {{ !statusVagasEstacionamento.vagaMediaDisponivel ? "Não" : "Sim" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">directions_bus</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas de Van Cheias</div>
+        <div class="valor">
+          {{ !statusVagasEstacionamento.vagaGrandeDisponivel ? "Não" : "Sim" }}
+        </div>
+      </div>
+    </div>
+
+    <div class="indicador">
+      <mat-icon class="icone-circulo">list_alt</mat-icon>
+      <div class="detalhes">
+        <div class="label">Vagas de Van Ocupadas</div>
+        <div class="valor">{{ vagasVanOcupadas }}</div>
+      </div>
+    </div>
+  </mat-card-content>
+</div>

@@ -71,6 +71,8 @@ export class HomeComponent implements OnInit {
             this.alertService.success(
               `Ticket cadastrado com sucesso. Por favor, dirija-se até sua vaga.`
             );
+
+            this.ticketFormulario.reset();
           },
           error: (error) => {
             load.hide();

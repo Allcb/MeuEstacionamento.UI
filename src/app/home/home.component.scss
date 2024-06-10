@@ -59,7 +59,6 @@ main {
   display: flex;
   flex-direction: column;
   margin-right: 10px;
-  // max-width: 700px;
   margin-bottom: 3rem;
 }
 
@@ -112,10 +111,14 @@ mat-card {
   width: 100%;
 }
 
+mat-card-header {
+  padding: 18px 16px 0;
+  justify-content: center;
+}
+
 .conteudo {
   display: flex;
   justify-content: space-evenly;
-  // width: 100%;
 }
 
 .pergunta {
