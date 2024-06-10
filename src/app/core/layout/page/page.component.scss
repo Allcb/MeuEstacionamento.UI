@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/constants";
+
+.header {
+  height: 60px;
+  background-color: $primary;
+}
+
+mat-sidenav-content {
+  transition: all 0.4s ease;
+  background-color: $tertiary;
+}
+
+mat-sidenav {
+  width: 70px;
+  transition: all 0.4s ease;
+  background-image: linear-gradient(rgba(1, 7, 14, 0.8), rgb(68 132 206 / 80%)),
+    url('/assets/images/background.jpg');
+
+
+  background-size: cover;
+  background-position: center center;
+
+  &.opened {
+    width: 225px;
+  }
+}
+
+.opened-mat-sidenav-content {
+  margin-left: 225px !important;
+}
+
+.page {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+}
+
+.container {
+  margin: 1em;
+}

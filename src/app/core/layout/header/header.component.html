@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img src="../../../../assets/images/MeuEstacionamento_logo.png">
+    <div>
+      <p>Meu Estacionamento</p>
+    </div>
+    <div class="perfil-botao">
+      <button mat-button class="perfil-circle" [matMenuTriggerFor]="menu" matTooltip="Opções">
+        <mat-icon class="icone">account_circle</mat-icon>
+        <span class="iniciais-nome">ME</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>lock_open</mat-icon>
+          <span>Alterar senha</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
