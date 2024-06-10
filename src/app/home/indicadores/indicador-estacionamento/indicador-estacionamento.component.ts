@@ -29,7 +29,6 @@ export class IndicadorEstacionamentoComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    debugger
     if (changes['estacionamentoId']) {
       this.estacionamentoId = changes['estacionamentoId'].currentValue;
       this.obterMetricas();
