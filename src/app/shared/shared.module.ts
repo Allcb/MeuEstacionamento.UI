@@ -4,26 +4,26 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { MatCardModule } from "@angular/material/card";
-// import { NgxMaskModule } from 'ngx-mask';
+import { AlertComponent, AlertService } from "./services/alert.service";
 
 @NgModule({
   imports: [
     MaterialModule,
     CommonModule,
     ReactiveFormsModule,
-    // NgxMaskModule.forRoot(),
   ],
-  declarations: [ ],
+  declarations: [
+    AlertComponent
+  ],
   exports: [
     FormsModule,
-    // LazyImgDirective,
     MatCardModule,
     MaterialModule,
-    // NgxMaskModule,
     ReactiveFormsModule,
     RouterModule
   ],
   providers: [
+    AlertService,
   ],
 })
 export class SharedModule { }
