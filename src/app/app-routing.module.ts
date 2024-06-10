@@ -8,7 +8,13 @@ const routes: Routes | RouteConfig[] = configRoute([
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  }
+  },
+  {
+    path: 'home',
+    title: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomeModule),
+  },
 ]);
 
 @NgModule({
